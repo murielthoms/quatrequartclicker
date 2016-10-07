@@ -1,24 +1,17 @@
 $(document).ready(function(){
-	//votre code
 	var tab = ["Presque", "bingo", "youpi"]
-	var gateau = 0;
+	var nbClickGateau = 0;
 	
 	$("img").click(function(){
+		var random = Math.random() * tab.length;
+	    	var nbAleatoireArrondi = Math.floor(random);
+		nbClickGateau++;
 
-		var random = Math.random()*(tab.length);
-	    var floor = Math.floor(random);
-		gateau++;
+		$(".counter").text(nbClickGateau);
 
-		$(".counter").text(gateau);
-
-		if (gateau % 5 === 0) {
-			alert(tab[floor]);
+		if (nbClickGateau % 5 === 0) {
+			alert(tab[nbAleatoireArrondi]);
 		};
-		
-		
-
-		
-		
 	});
 
 });
